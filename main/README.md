@@ -1,0 +1,4 @@
+```python
+# GetInformation(input)
+    
+```
