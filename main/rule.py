@@ -39,7 +39,7 @@ class Rule:
         self.predicates += predicates
         return self
 
-    def fuzzy_match(self, val_a: Field, val_b: Field) -> Self:
+    def fuzzy_match(self, val_a: Any, val_b: Any) -> Self:
         self.predicates.append(Predicate(val_a.owner, val_a.name, Operators.Nil, val_b))
         return self
 
