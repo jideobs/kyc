@@ -26,11 +26,12 @@ if __name__ == '__main__':
         .where(SimRegInformation.phone_number == BvnInformation.phone_number) \
         .fuzzy_match(SimRegInformation.fullname, BvnInformation.fullname)
 
-    (RulesExecutor('KYC account users')
-     .either(bank_account_bvn_verification)
-     .or_(simreg_information_verification)
-     .then(simreg_information_bvn_information))
+    kyc_account_verification = RulesExecutor('KYC account users') \
+        .either([bank_account_bvn_verification, simreg_information_verification]) \
+        .or_([simreg_information_bvn_information]) \
+        .execute()
 
-    print(bank_account_bvn_verification)
-    print(simreg_information_verification)
-    print(simreg_information_bvn_information)
+    if kyc_account_verification:
+        print('YES')
+    else:
+        print('NO')

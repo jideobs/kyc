@@ -1,2 +1,7 @@
 virtualenv
 .idea
+
+# Python compiled byte code
+__pycache__/
+.pytest_cache/
+*.pyc
