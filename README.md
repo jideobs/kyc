@@ -73,4 +73,4 @@ This example combines the first 2 rules which must pass or execute the last rule
 
 The diagram below should better illustrate the intention of the code architecture for this proposed KYC service.
 
-![Untitled](KYC%20Service%20700d814e74de45e6a12304a65c88aca7/Untitled.png)
+![Code Architecture](code_architecture.png)
