@@ -37,6 +37,7 @@ class AccountInformation(Base):
     type_ = DatasourceType.BANK_ACCOUNT
 
     account_number = Field()
+    bvn = Field()
     first_name = Field()
     last_name = Field()
     fullname = Field()
@@ -59,3 +60,16 @@ class SimRegInformation(Base):
     first_name = Field()
     last_name = Field()
     fullname = Field()
+
+
+class ProvidedInput(Base):
+    bvn = Field()
+    phone_number = Field()
+    account_number = Field()
+    bank_code = Field()
+    first_name = Field()
+    last_name = Field()
+    middle_name = Field()
+    fullname = Field()
+    gender = Field()
+    date_of_birth = Field()

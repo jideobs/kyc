@@ -1,0 +1,39 @@
+[
+  {
+    "datasource": "BVN",
+    "clients": [
+      {
+        "name": "Okra",
+        "request": {
+          "method": "POST",
+          "url": "https://",
+          "endpoint": "",
+          "headers": {
+            "accept": "application/json",
+            "content-type": "application/json"
+          },
+          "auth": {
+            "type": "Option[APIKey, BearerToken, JWTBearer, Basic Auth, Digest Auth]",
+            "credentials": {
+              "accessKey": "",
+              "secretKey": "",
+              "in": [
+                ""
+              ]
+            }
+          },
+          "payload": {
+            "bvn": {
+              "type": "str",
+              "required": "true",
+              "in": "body"
+            }
+          }
+        },
+        "response": {
+          "...": "..."
+        }
+      }
+    ]
+  }
+]

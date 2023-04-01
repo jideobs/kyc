@@ -1,11 +1,11 @@
-from typing import Any, List, Self, Union
 from dataclasses import dataclass
+from typing import Any, List, Self
 
 from datasources import datasource_factory
 from descriptors import Field
-from predicate import Predicate
 from models import DatasourceType
 from operators import Operators
+from predicate import Predicate
 
 
 @dataclass
@@ -91,7 +91,7 @@ class RulesExecutor:
         self._score = 0
         self._either_score = 0
 
-    def _is_valid(self) -> bool:
+    def is_valid(self) -> bool:
         return self._score >= self._threshold
 
     def threshold(self, val: float) -> Self:
@@ -105,6 +105,10 @@ class RulesExecutor:
     def or_(self, rules: List[Rule]) -> Self:
         self._or_rules = rules
         return self
+
+    @property
+    def score(self) -> float:
+        return self._score
 
     def execute(self) -> Self:
         score = 0
@@ -124,4 +128,4 @@ class RulesExecutor:
         return self
 
     def __bool__(self):
-        return self._is_valid()
+        return self.is_valid()

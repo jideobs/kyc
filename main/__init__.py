@@ -2,6 +2,7 @@ from datasources import register_data_sources
 from models import BvnInformation, AccountInformation, DatasourceType, SimRegInformation
 from rule import Rule, RulesExecutor
 
+
 if __name__ == '__main__':
     register_data_sources()
 
@@ -31,6 +32,7 @@ if __name__ == '__main__':
         .or_([simreg_information_bvn_information]) \
         .execute()
 
+    print(kyc_account_verification.score)
     if kyc_account_verification:
         print('YES')
     else:
